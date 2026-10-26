@@ -3,8 +3,13 @@ function ReadingGoal({ currentPage, goal, onReadPages, onDismiss }) {
 
   return (
     <section className="reading-goal" aria-labelledby="reading-goal-title">
-      <button className="close-button" type="button" onClick={onDismiss}>
-        x
+      <button
+        className="close-button"
+        type="button"
+        aria-label="Dismiss reading goal"
+        onClick={onDismiss}
+      >
+        ×
       </button>
       <h1 id="reading-goal-title">Reading goal</h1>
       <h2>React basics</h2>
