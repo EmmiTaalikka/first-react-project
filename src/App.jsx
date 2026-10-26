@@ -1,14 +1,30 @@
+import { useState } from 'react'
 import './App.css'
+import ReadingGoal from './ReadingGoal'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(0)
+  const [isGoalVisible, setIsGoalVisible] = useState(true)
+
+  function handleReadPages() {
+    setCurrentPage((page) => page + 10)
+  }
+
+  function handleDismiss() {
+    setIsGoalVisible(false)
+    console.log('Reading goal dismissed')
+  }
+
   return (
     <main className="app">
-      <p className="eyebrow">React + Vite</p>
-      <h1>Emmi Taalikka</h1>
-      <p className="intro">
-        This is my first React project, created with the Vite React JavaScript
-        template.
-      </p>
+      {isGoalVisible && (
+        <ReadingGoal
+          currentPage={currentPage}
+          goal={50}
+          onReadPages={handleReadPages}
+          onDismiss={handleDismiss}
+        />
+      )}
     </main>
   )
 }
