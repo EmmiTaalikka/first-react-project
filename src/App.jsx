@@ -11,8 +11,8 @@ function App() {
   }
 
   function handleDismiss() {
-    setIsGoalVisible(false)
     console.log('Reading goal dismissed')
+    setIsGoalVisible(false)
   }
 
   return (
